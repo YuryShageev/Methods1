@@ -53,13 +53,13 @@ public class Main {
         boolean deviseIsOld = isDeviceOld(deviceYear);
         System.out.print("Установите ");
         if (deviseIsOld) {
-            System.out.println("lite ");
+            System.out.print("lite ");
         }
         System.out.print("версию для ");
         if (clientOS == 0) {
-            System.out.println("iOS");
+            System.out.print("iOS");
         } else {
-            System.out.println("Android");
+            System.out.print("Android");
         }
     }
 
@@ -68,11 +68,26 @@ public class Main {
         return deviceYear <= currentYear;
     }
 
+    private static void choosingVersion(int oS, int yearManufacture) {
+        String osType = "";
+        switch (oS) {
+            case 0:
+                osType = "iOS";
+                break;
+            case 1:
+                osType = "Android";
+        }
+        System.out.printf("Установите %s версию приложения для %s по ссылке", osType, getVersionByYear(yearManufacture));
+    }
+
+    private static String getVersionByYear(int year) {
+        return year < LocalDate.now().getYear() ? "облегченную" : "";
+    }
 
     public static int findDeliveryDistance(int b) {
         for (b = 0; b < 10; b++) {
         }
-        return 0;
+        return b;
     }
 
     public static int understandDistance(int a, int b) {
@@ -90,7 +105,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Task 1");
-        int year = 2019;
+        int year = 2022;
         checkLeapYear(year);
         printIsLeapYear(year);// Переделка первого задаия
 
@@ -101,7 +116,10 @@ public class Main {
         int phoneVersion = LocalDate.now().getYear();
         findOutPhoneRelease(phoneVersion);
 
-        recommendApplicationVersion(clientOS, year);
+        recommendApplicationVersion(clientOS, year);// Переделка второго задания
+        System.out.println();
+        choosingVersion(clientOS, year);//Ещё одна переделка второго задания
+        System.out.println();
 
         System.out.println("Task 3");
         int deliveryDistance = 95;

@@ -84,22 +84,33 @@ public class Main {
         return year < LocalDate.now().getYear() ? "облегченную" : "";
     }
 
-    public static int findDeliveryDistance(int b) {
-        for (b = 0; b < 10; b++) {
-        }
-        return b;
-    }
 
     public static int understandDistance(int a, int b) {
-        b = findDeliveryDistance(b);
+        b = 1;
         if (a < 20){
+            b++;
             System.out.println("Потребуется " + b + " день");
         } else if (a >= 20 || a < 60) {
+            b++;
             System.out.println("Потребуется " + b + " дня");
         } else {
+            b++;
             System.out.println("Потребуется больше 3-х дней");
         }
         return 0;
+    }
+
+    public static void calculateDeliveryDays(int deliveryDistance) {
+        int result = 1;
+        if (deliveryDistance > 20) {
+            result++;
+        }
+        if (deliveryDistance > 60 && deliveryDistance < 100) {
+            result++;
+        } else {
+            System.out.println("Невозможно рассчитать срок доставки");
+        }
+        System.out.println("Потребуется дней: " + result);
     }
 
     public static void main(String[] args) {
@@ -123,9 +134,10 @@ public class Main {
 
         System.out.println("Task 3");
         int deliveryDistance = 95;
-        int numberDays = 0;
+        int numberDays = 1;
         understandDistance(deliveryDistance, numberDays);
 
+        calculateDeliveryDays(deliveryDistance);
     }
 
 

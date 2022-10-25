@@ -21,23 +21,6 @@ public class Main {
     }
 
 
-    public static int findOutVersion(int a) {
-        if (a == 1) {
-            System.out.println("Ваша операционная система - Android");
-        } else {
-            System.out.println("Ваша операционная система - iOS");
-        }
-        return 0;
-    }
-
-    public static int findOutPhoneRelease(int a) {
-        if (a >= 2015) {
-            System.out.println("Ваша система современная");
-        } else {
-            System.out.println("Установите облегченную версию программы");
-        }
-        return 0;
-    }
 
     public static void recommendApplicationVersion(int clientOS, int deviceYear) {
         boolean deviseIsOld = isDeviceOld(deviceYear);
@@ -111,10 +94,6 @@ public class Main {
 
         System.out.println("Task 2");
         int clientOS = 1;
-        findOutVersion(clientOS);
-
-        int phoneVersion = LocalDate.now().getYear();
-        findOutPhoneRelease(phoneVersion);
 
         recommendApplicationVersion(clientOS, year);// Переделка второго задания
         System.out.println();

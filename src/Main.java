@@ -58,19 +58,6 @@ public class Main {
     }
 
 
-    public static int understandDistance(int a, int b) {
-        b = 1;
-        if (a < 20){
-            b++;
-            System.out.println("Потребуется " + b + " день");
-        } else if (a >= 20 && a < 60) {
-            b++;
-            System.out.println("Потребуется " + b + " дня");
-        } else {
-            System.out.println("Потребуется больше 3-х дней");
-        }
-        return 0;
-    }
 
     public static void calculateDeliveryDays(int deliveryDistance) {
         int result = 1;
@@ -101,9 +88,6 @@ public class Main {
 
         System.out.println("Task 3");
         int deliveryDistance = 95;
-        int numberDays = 1;
-        understandDistance(deliveryDistance, numberDays);
-
         calculateDeliveryDays(deliveryDistance);
     }
 

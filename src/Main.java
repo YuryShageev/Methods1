@@ -67,7 +67,6 @@ public class Main {
             b++;
             System.out.println("Потребуется " + b + " дня");
         } else {
-            b++;
             System.out.println("Потребуется больше 3-х дней");
         }
         return 0;
